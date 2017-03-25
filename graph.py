@@ -110,18 +110,6 @@ class Graph(object):
             adjacency_matrix[edge.node_from.value][edge.node_to.value] = edge.value
         return adjacency_matrix
 
-    def find_max_index(self):
-        """Return the highest found node number
-        Or the length of the node names if set with set_node_names()."""
-        if len(self.node_names) > 0:
-            return len(self.node_names)
-        max_index = -1
-        if len(self.nodes):
-            for node in self.nodes:
-                if node.value > max_index:
-                    max_index = node.value
-        return max_index
-
     def find_node(self, node_number):
         "Return the node with value node_number or None"
         return self._node_map.get(node_number)
